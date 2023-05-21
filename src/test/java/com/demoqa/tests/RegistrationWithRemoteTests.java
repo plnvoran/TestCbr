@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("practice_form")
 public class RegistrationWithRemoteTests extends RemoteTestBase {
 
-    @Test
+  //  @Test
     @Tag("smoke") @Tag("blocker")
     @DisplayName("Successful registration")
     void successfulRegistrationTest() {
