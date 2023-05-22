@@ -16,7 +16,8 @@ public class CbrHomePage {
            headerLogo= $(".home-header_top .header_logo"),
             headerLeftMenu = $(".home-header_top .header_menu"),
             activeSlide = $(".home-header_main .swiper-slide-active"),
-           homeTitle= $("head>title");
+            languageActive= $(".home-header_top .header_lang>._active"),
+            languageNoActive = $(".home-header_top .header_lang_item>a");
 
 
     // Actions
@@ -26,12 +27,18 @@ public class CbrHomePage {
     }
 
 
-    public CbrHomePage checkHomeTitle() {
-        assertEquals("Центральный банк Российской Федерации | Банк России", Selenide.title());
+    public CbrHomePage checkHomeTitle(String  language) {
+
+        if (language.equals("RU"))
+        {
+            assertEquals("Центральный банк Российской Федерации | Банк России", Selenide.title());
+        }
+        else
+            assertEquals("The Central Bank of Russian Federation | Bank of Russia", Selenide.title());
+
         return this;
 
     }
-
 
     public CbrHomePage checkTopHorizontalMenuIsVisible() {
 
@@ -49,11 +56,24 @@ public class CbrHomePage {
         headerLeftMenu.should(visible);
         return this;
     }
-
     public CbrHomePage  checkActiveSlideIsVisible() {
-        headerLeftMenu.should(visible);
+        activeSlide.should(visible);
         return this;
     }
 
+    public CbrHomePage checkActiveLanguage(String language) {
+        languageActive.shouldHave(text(language));
+        return this;
+    }
+
+    public CbrHomePage switchToLanguage(String language) {
+        languageNoActive.shouldHave(text(language)).click();
+        return this;
+    }
+
+    public CbrHomePage  checkNoActiveLanguage(String language) {
+        languageNoActive.shouldHave(text(language));
+        return this;
+    }
 
 }
