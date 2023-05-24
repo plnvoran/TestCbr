@@ -25,7 +25,7 @@ public class RemoteTestBase {
         Configuration.pageLoadStrategy = "eager";
 
         //url of the site, which is tested (from command line)
-        Configuration.baseUrl = System.getProperty("site_base_url", "https://demoqa.com");
+        Configuration.baseUrl = System.getProperty("site_base_url", "https://www.cbr.ru");
 
         //type of browser and its version (from command line) (example - 'chrome:100.0')
         String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
