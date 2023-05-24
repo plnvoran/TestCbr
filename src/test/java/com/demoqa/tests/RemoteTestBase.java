@@ -4,7 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.helpers.Attach;
 import com.demoqa.pages.CbrHomePage;
-import com.demoqa.pages.RegistrationPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 @Tag("remote")
 public class RemoteTestBase {
-    RegistrationPage registrationPage =new RegistrationPage();
     CbrHomePage cbrHomePage = new  CbrHomePage();
     @BeforeAll
     static void beforeAll() {
