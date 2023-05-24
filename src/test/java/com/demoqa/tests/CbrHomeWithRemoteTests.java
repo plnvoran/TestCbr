@@ -11,8 +11,8 @@ public class CbrHomeWithRemoteTests extends RemoteTestBase{
 
     @Test
     @Tag("smoke") @Tag("blocker")
-    @DisplayName("Check main elements on Home")
-    void successfulOpenHome() {
+    @DisplayName("Check main elements on RU Home")
+    void checkMainElementsOnHomeRu() {
         step("Open home", () -> {
             cbrHomePage.openPage();
         });
@@ -22,7 +22,7 @@ public class CbrHomeWithRemoteTests extends RemoteTestBase{
             cbrHomePage
                     .checkTopHorizontalMenuIsVisible()
                     .checkHeaderLeftMenuIsVisible()
-                    .checkHeaderLogoIsVisible()
+                    .checkHeaderLogoIsVisible("RU")
                     .checkActiveSlideIsVisible();
 
         });
@@ -65,7 +65,7 @@ public class CbrHomeWithRemoteTests extends RemoteTestBase{
 
     @Test
     @Tag("smoke") @Tag("blocker")
-    @DisplayName("Check EN Home title")
+    @DisplayName("Check swithing to English")
     void switchToEnglish() {
         step("Open home", () -> {
             cbrHomePage.openPage();
@@ -78,6 +78,29 @@ public class CbrHomeWithRemoteTests extends RemoteTestBase{
 
         step("Check EN Home title", () -> {
             cbrHomePage.checkHomeTitle("EN");
+
+        });
+    }
+
+    @Test
+    @Tag("smoke") @Tag("blocker")
+    @DisplayName("Check main elements on EN Home")
+    void checkMainElementsOnHomeEn() {
+        step("Open home", () -> {
+            cbrHomePage.openPage();
+        });
+
+        step("Switch to English", () -> {
+            cbrHomePage.switchToLanguage("EN");
+
+        });
+
+        step("Check main elements on Home", () -> {
+            cbrHomePage
+                    .checkTopHorizontalMenuIsVisible()
+                    .checkHeaderLeftMenuIsVisible()
+                    .checkHeaderLogoIsVisible("EN")
+                    .checkActiveSlideIsVisible();
 
         });
     }

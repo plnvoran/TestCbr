@@ -13,7 +13,8 @@ public class CbrHomePage {
 
     // Locators
     SelenideElement topHorizontalMenu = $(".home-header_top"),
-           headerLogo= $(".home-header_top .header_logo"),
+            headerLogoRu = $(".home-header_top .header_logo"),
+            headerLogoEn= $(".home-header_top .header_logo_eng"),
             headerLeftMenu = $(".home-header_top .header_menu"),
             activeSlide = $(".home-header_main .swiper-slide-active"),
             languageActive= $(".home-header_top .header_lang>._active"),
@@ -46,11 +47,18 @@ public class CbrHomePage {
         return this;
     }
 
-    public CbrHomePage checkHeaderLogoIsVisible() {
+    public CbrHomePage checkHeaderLogoIsVisible(String language) {
 
-        headerLogo.should(visible);
+        if (language.equals("RU"))
+        {
+            headerLogoRu.should(visible);
+        }
+        else
+            headerLogoEn.should(visible);
+
         return this;
     }
+
 
     public CbrHomePage  checkHeaderLeftMenuIsVisible() {
         headerLeftMenu.should(visible);
