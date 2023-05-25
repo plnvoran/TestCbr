@@ -44,23 +44,8 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 }
 
-task practice_form(type: Test) {
-    useJUnitPlatform{
-        includeTags("practice_form")
+    tasks.register('TestCbr', Test) {
+        useJUnitPlatform {
+            includeTags("remote")
+        }
     }
-}
-task smoke(type: Test) {
-    useJUnitPlatform{
-        includeTags("smoke")
-    }
-}
-task blocker(type: Test) {
-    useJUnitPlatform{
-        includeTags("blocker")
-    }
-}
-task remote(type: Test) {
-    useJUnitPlatform{
-        includeTags("remote")
-    }
-}
