@@ -1,5 +1,6 @@
 package com.demoqa.tests;
 
+import com.demoqa.pages.CbrHomePage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,10 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @Tag("remote")
-public class CbrHomeWithRemoteTests extends RemoteTestBase {
+public class CbrHomeWithRemoteTests  {
+ //   public class CbrHomeWithRemoteTests extends RemoteTestBase {
+
+     CbrHomePage cbrHomePage  = new  CbrHomePage ();
 
     @Test
     @Tag("smoke")
