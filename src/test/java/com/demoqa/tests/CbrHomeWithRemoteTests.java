@@ -8,10 +8,8 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @Tag("remote")
-public class CbrHomeWithRemoteTests  {
- //   public class CbrHomeWithRemoteTests extends RemoteTestBase {
 
-     CbrHomePage cbrHomePage  = new  CbrHomePage ();
+public class CbrHomeWithRemoteTests extends RemoteTestBase {
 
     @Test
     @Tag("smoke")
