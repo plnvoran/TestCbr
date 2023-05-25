@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation(
+    testImplementation (
             "com.codeborne:selenide:6.13.0",
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "org.slf4j:slf4j-simple:2.0.7",
@@ -44,8 +44,23 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 }
 
-tasks.register('TestCbr', Test) {
-    useJUnitPlatform {
+task practice_form(type: Test) {
+    useJUnitPlatform{
+        includeTags("practice_form")
+    }
+}
+task smoke(type: Test) {
+    useJUnitPlatform{
+        includeTags("smoke")
+    }
+}
+task blocker(type: Test) {
+    useJUnitPlatform{
+        includeTags("blocker")
+    }
+}
+task remote(type: Test) {
+    useJUnitPlatform{
         includeTags("remote")
     }
 }
