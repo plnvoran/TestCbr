@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("practice_form")
+@Tag("remote")
 public class CbrHomeWithRemoteTests extends RemoteTestBase {
 
     @Test
