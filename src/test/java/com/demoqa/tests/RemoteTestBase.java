@@ -14,7 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-@Tag("remote")
+
 public class RemoteTestBase {
     CbrHomePage cbrHomePage = new  CbrHomePage();
     @BeforeAll
