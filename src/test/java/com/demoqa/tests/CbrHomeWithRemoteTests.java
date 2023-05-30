@@ -11,6 +11,8 @@ import static io.qameta.allure.Allure.step;
 
 public class CbrHomeWithRemoteTests extends RemoteTestBase {
 
+    CbrHomePage  cbrHomePage  = new  CbrHomePage ();
+
     @Test
     @Tag("smoke")
     @Tag("blocker")
